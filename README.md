@@ -11,15 +11,19 @@ The project must run with a simple "bower install".
 Code example :
 
 var app = angular.module('myApp', []);
-        // Anf=gularjs controller control the data of Angularjs application	
+        // Anf=gularjs controller control the data of Angularjs application
+	
      app.controller('customersCtrl', function($scope, $http) {
+     
         //the angularjs function .get is used to recover a file	
      $http.get('studentc.json').then(function (response) {
      $scope.myData = response.data.student;
    });
+   
         // the function .post serves to display the modification in the Json file
      $scope.save = function() {            						
-     $http.post('studentc.json', $scope.myData).then(function(response) {    
+     $http.post('studentc.json', $scope.myData).then(function(response) {
+     
         // The last line serves display the new Json file
      $scope.msg = 'Data sent: '+ JSON.stringify($scope.myData);
     });
