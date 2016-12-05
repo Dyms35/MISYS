@@ -7,7 +7,7 @@ Synopsis :
 The project's goal is to do a bower module which allow someone to edit a JSON file thanks to a HTML form.
 We have to manage any type of fields (input, checkbox, textearea, radio button) and create a github.
 The project must run with a simple "bower install".
--------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
 Code example :
 
 var app = angular.module('myApp', []);
@@ -34,11 +34,11 @@ var app = angular.module('myApp', []);
 for use this js code we have to use the framework Angularsjs.
 		//this tag connect the code and the Angularjs. 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>  
------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
 Motivation
 
 We choised this project for increase our skills in JavaScript, to learn about JSON file and how to use github
------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
 Tests
 
 To run the project we needed a localhost (WampsServer) to separate the JSON and the js file because we cannot read the JSON file without it.
