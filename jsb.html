@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="customersCtrl">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+<meta charset=utf-8 />
+<title>JS Bin</title>
+</head>
+<body>
+<form>
+      <div>
+      
+
+         Prenom: <input type = "text" ng-model= "myData[0].prenom"><br><br>
+         Nom: <input type = "text" ng-model = "myData[0].nom"><br>
+         <br>
+         Mot de passe: <input type="password"  ng-model = "myData[0].mdp"><br>
+         <!--date: <input type="date" ng-model ="myData[0].date" required><br>-->
+         Time:<time>2016-4-12</time><br>
+         couleur favorite:<input type="color" ng-model = "myData[0].couleur"><br>
+         Sexe: <label>Femme
+         	<input type="radio" ng-model ="myData[0].radio1" value="radio1" name="radio1">
+         	</label>
+         	<label>Homme
+         		<input type="radio" name="radio1" ng-model ="myData[0].radio1" value="radio2">
+         	</label><br>
+         choix: Glace<input type="checkbox" name="checkbox1" value="1" ng-checked ="myData[0].check1" ><br>
+        Bonbon<input type="checkbox" name="checkbox2"  value="2" ng-model ="myData[0].check2"><br>
+         Biscuit<input type="checkbox" name="checkbox3" value="3" ng-model ="myData[0].check3"><br>
+         Commentaire:<textarea name="textarea" ng-model ="myData[0].commentaire">contenu</textarea><br>
+         Url:<input type="url" ng-model="myData[0].url"><br>
+
+         You are entering: {{msg}}
+         <button ng-click="save()">Save</button> 
+      </div>
+</form>
+<script>
+var app = angular.module('myApp', []);
+     app.controller('customersCtrl', function($scope, $http) {
+     $http.get('studentc.json').then(function (response) {
+     $scope.myData = response.data.student;
+   });
+     $scope.save = function() {
+     $http.post('student/json/studento.json', $scope.myData).then(function(response) {
+     	$scope.msg = 'Data sent: '+ JSON.stringify($scope.myData);
+    });
+    };
+  });
+</script>
+</body>
+</html>
