@@ -7,7 +7,7 @@ Synopsis :
 The project's goal is to do a bower module which allow someone to edit a JSON file thanks to a HTML form.
 We have to manage any type of fields (input, checkbox, textearea, radio button) and create a github.
 The project must run with a simple "bower install".
----------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------
 Code example :
 
 var app = angular.module('myApp', []);
